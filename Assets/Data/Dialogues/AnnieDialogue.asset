@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223512b5989aebd419555ef2f71488a6, type: 3}
+  m_Name: AnnieDialogue
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: AnnieDialogue
+  _nodes:
+  - <ID>k__BackingField: Annie_Intro_0
+    <_text>k__BackingField: Hello! I am Annie!
+    <_answers>k__BackingField:
+    - <ID>k__BackingField: Annie_Intro_0_A1
+      <Text>k__BackingField: Hello! Nice to meet you, I'm player!
+      <NextNodeId>k__BackingField: Annie_Intro_1
+      <Condition>k__BackingField: {fileID: 0}
+      <Emotion>k__BackingField: 2
+    <_presetEmotion>k__BackingField: 0
+    <Condition>k__BackingField: {fileID: 0}
+  - <ID>k__BackingField: Annie_Intro_1
+    <_text>k__BackingField: Nice to meet you too! What do you want
+    <_answers>k__BackingField: []
+    <_presetEmotion>k__BackingField: 0
+    <Condition>k__BackingField: {fileID: 0}

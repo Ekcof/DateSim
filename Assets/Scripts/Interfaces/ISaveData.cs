@@ -1,0 +1,6 @@
+// TODO: Вместо object придумать какую-то другую обертку в виде интерфейса или базового класса для сохраняемых данных
+public interface ISaveData 
+{
+    public SerializableData Serialize();
+    public void Deserialize(SerializableData data);
+}
