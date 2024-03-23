@@ -29,6 +29,25 @@ public static class EventsBus
         });
     }
 
+    public static void Unsubscribe<T>(object subscriber, Action<T> eventHandler)
+    {
+        Type eventType = typeof(T);
+        if (!eventSubscriptions.ContainsKey(eventType))
+        {
+            return;
+        }
+
+        var list = eventSubscriptions[eventType];
+        for(int i = 0; i < list.Count; i++)
+        {
+            if (list[i].Subscriber.Target == subscriber)
+            {
+                list[i].Subscriber.Target = null;
+                return;
+            }
+        }
+    }
+
     public static void Publish<T>(T eventData)
     {
         Type eventType = typeof(T);
