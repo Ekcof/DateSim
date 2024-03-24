@@ -2,8 +2,10 @@
 using TMPro;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using System;
 
 
+[Serializable]
 public class TextUI
 {
     [SerializeField] private TMP_Text _text;

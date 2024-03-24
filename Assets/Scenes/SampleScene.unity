@@ -1450,7 +1450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 6e6517c00f8b3d749af08ab102348076, type: 2}
   _monoInstallers:
   - {fileID: 1964226057}
   _installerPrefabs: []
@@ -2376,6 +2377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _locationButton: {fileID: 822804962}
+  _descriptionPanel: {fileID: 0}
+  _descriptionText:
+    _text: {fileID: 0}
 --- !u!1 &1820744747
 GameObject:
   m_ObjectHideFlags: 0
