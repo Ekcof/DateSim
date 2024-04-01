@@ -15,6 +15,8 @@ public class StatsPanel : MonoBehaviour
 
     private void Awake()
     {
+        if (_mainStatsManager == null)
+            return;
         _mainStatsManager.Money
             .Subscribe(newMoneyValue =>
             {

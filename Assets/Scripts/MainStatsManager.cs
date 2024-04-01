@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MainStatsManager : MonoBehaviour, ISaveData
 {
-    private IReactiveProperty<int> _health;
-    private IReactiveProperty<int> _exp;
-    private IReactiveProperty<int> _level;
-    private IReactiveProperty<long> _money;
+    private ReactiveProperty<int> _health = new();
+    private ReactiveProperty<int> _exp = new();
+    private ReactiveProperty<int> _level = new();
+    private ReactiveProperty<long> _money = new();
 
     public IReadOnlyReactiveProperty<long> Money => _money;
     public IReadOnlyReactiveProperty<int> Health => _health;

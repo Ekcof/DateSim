@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine.Networking;
+using UnityEditor.AssetImporters;
 
 [CreateAssetMenu(fileName = "GoogleSheetImporter", menuName = "Localization/Google Sheet Importer")]
 public class GoogleSheetImporter : ScriptableObject
