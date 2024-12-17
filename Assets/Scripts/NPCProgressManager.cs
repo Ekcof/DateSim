@@ -1,8 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
-public class NPCProgressManager : MonoBehaviour, ISaveData
+public interface INPCProgressManager
+{
+    void SaveNPCProgress(NPCProgress progress);
+    bool TryGetNPCProgress(string name, out NPCProgress progress);
+    SerializedNPCData Serialize();
+    void Deserialize(SerializedNPCData data);
+}
+
+public class NPCProgressManager : INPCProgressManager, ISaveData
 {
     private List<NPCProgress> _npcs;
 
@@ -33,32 +40,13 @@ public class NPCProgressManager : MonoBehaviour, ISaveData
         return false;
     }
 
-    public SerializableData Serialize()
+    public SerializedNPCData Serialize()
     {
-        return new NPCData { NPCs = _npcs};
+        return new SerializedNPCData { NPCs = _npcs.ToArray() };
     }
 
-    public void Deserialize(SerializableData data)
+    public void Deserialize(SerializedNPCData data)
     {
-        if (data is NPCData npcs)
-        {
-            _npcs = npcs.NPCs;
-        }
+        _npcs = data.NPCs.ToList();
     }
 }
-
-[System.Serializable]
-public struct NPCProgress
-{
-    public string Name;
-    public float Progress;
-    public string[] UsedNodeIds;
-}
-
-
-public class NPCData: SerializableData
-{
-    public List<NPCProgress> NPCs;
-}
-
-

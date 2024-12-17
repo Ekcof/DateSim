@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +42,7 @@ public class Dialogue : ScriptableObject
         if (_nodes == null || _nodes.Length == 0)
             return default;
 
-        for(int i = 0; i < _nodes.Length; i++)
+        for (int i = 0; i < _nodes.Length; i++)
         {
             if (_nodes[i].IsStartNode && (_nodes[i].Condition != null || _nodes[i].Condition.OnCheckCondition()))
             {

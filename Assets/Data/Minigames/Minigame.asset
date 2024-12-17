@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813f529a6d6195646bbabcaed4f7c69b, type: 3}
+  m_Name: Minigame
+  m_EditorClassIdentifier: 
+  _breedingCooldown: 10
+  _hamsterLifetime: 90
+  _hamsterCountLimit: 99
+  _hamsterPrefab: {fileID: 4478926117668072042, guid: 282f2a72f5b69b945bdff8417a71cfc2, type: 3}

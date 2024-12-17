@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class OnStartDialogue
 {
@@ -21,4 +18,23 @@ public class OnTryToChangeUIState
 public class OnRequestToOpenWindow
 {
     public Type WindowType;
+}
+
+public class OnStartLevel
+{
+    public int Level;
+}
+
+public class OnFailLevel
+{
+    public int level;
+}
+
+public class OnFinishLevel
+{
+}
+
+public class OnGetRewards
+{
+    public Reward[] Rewards;
 }

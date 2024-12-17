@@ -1,9 +1,20 @@
 using System;
-using System.Collections.Generic;
 using UniRx;
-using UnityEngine;
 
-public class MainStatsManager : MonoBehaviour, ISaveData
+public interface IMainStatsManager
+{
+    IReadOnlyReactiveProperty<long> Money { get; }
+    IReadOnlyReactiveProperty<int> Health { get; }
+    IReadOnlyReactiveProperty<int> Exp { get; }
+    IReadOnlyReactiveProperty<int> Level { get; }
+
+    void AddMoney(long moneyToAdd);
+    void AddExp(int expToAdd);
+    SerializedMainStatsData Serialize();
+    void Deserialize(SerializedMainStatsData data);
+}
+
+public class MainStatsManager : IMainStatsManager
 {
     private ReactiveProperty<int> _health = new();
     private ReactiveProperty<int> _exp = new();
@@ -26,9 +37,9 @@ public class MainStatsManager : MonoBehaviour, ISaveData
         _exp.Value += expToAdd;
     }
 
-    public SerializableData Serialize()
+    public SerializedMainStatsData Serialize()
     {
-        return new MainStatsData
+        return new SerializedMainStatsData
         {
             Health = _health.Value,
             Exp = _exp.Value,
@@ -37,9 +48,9 @@ public class MainStatsManager : MonoBehaviour, ISaveData
         };
     }
 
-    public void Deserialize(SerializableData data)
+    public void Deserialize(SerializedMainStatsData data)
     {
-        if (data is MainStatsData statsData)
+        if (data is SerializedMainStatsData statsData)
         {
             _health.Value = statsData.Health;
             _exp.Value = statsData.Exp;
@@ -47,14 +58,4 @@ public class MainStatsManager : MonoBehaviour, ISaveData
             _money.Value = statsData.Money;
         }
     }
-}
-
-public class MainStatsData: SerializableData
-{
-    public int Health;
-    public int Exp;
-    public int Level;
-    public long Money;
-
-    public List<NPCProgress> NPCs;
 }

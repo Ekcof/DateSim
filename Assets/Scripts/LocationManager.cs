@@ -19,18 +19,18 @@ public class LocationManager : MonoBehaviour, ISaveData
         return true;
     }
 
-    public void Deserialize(SerializableData data)
+    public void Deserialize(SerializedNPCData data)
     {
         throw new System.NotImplementedException();
     }
 
-    public SerializableData Serialize()
+    public SerializedNPCData Serialize()
     {
         throw new System.NotImplementedException();
     }
 }
 
-public class LocationData : SerializableData
+public class LocationData : SerializedNPCData
 {
 
 }
